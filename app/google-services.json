@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1027258875664",
+    "project_id": "emailauthapp-f769d",
+    "storage_bucket": "emailauthapp-f769d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027258875664:android:94cab5704b10a790162f95",
+        "android_client_info": {
+          "package_name": "com.gmagla.emailauthapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027258875664-slu9vo4skl714b0d8v0qnmjgs138cdf0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDD0VxwMeSRgiS9eaxVBoSK7jovOhtVorY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027258875664-slu9vo4skl714b0d8v0qnmjgs138cdf0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

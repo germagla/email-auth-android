@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EmailAuthApp</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="log_out">Log out</string>
+    <string name="your_account_is_not_verified_please_press_the_button_below_to_send_the_verification_email">Your account is not verified. Please press the button below to send the verification email.</string>
+    <string name="verify_email">Verify Email</string>
+</resources>
