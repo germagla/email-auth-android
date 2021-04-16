@@ -15,9 +15,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import java.util.ArrayList;
-import java.util.SplittableRandom;
-
 public class Register extends AppCompatActivity {
     EditText registerFullName, registerEmail, registerPassword, registerConfirmPassword;
     Button registerBtn, registerLoginBtn;
@@ -39,7 +36,7 @@ public class Register extends AppCompatActivity {
         registerLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                startActivity(new Intent(getApplicationContext(), PasswordLogin.class));
                 finish();
             }
         });
@@ -59,7 +56,7 @@ public class Register extends AppCompatActivity {
                 firebaseAuth.createUserWithEmailAndPassword(registerEmail.getText().toString(),registerPassword.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
                         finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {

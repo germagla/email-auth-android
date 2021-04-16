@@ -9,16 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EmailAuthApp">
-        <activity android:name=".ResetPassword"></activity>
-        <activity android:name=".Register" />
-        <activity android:name=".Login">
+        <activity android:name=".LoginMethods">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".ResetPassword" />
+        <activity android:name=".Register" />
+        <activity android:name=".PasswordLogin" />
+        <activity android:name=".Dashboard" />
     </application>
 
 </manifest>

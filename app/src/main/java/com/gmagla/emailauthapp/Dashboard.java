@@ -21,7 +21,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
     Button mainLogoutBtn, verifyBtn;
     FirebaseAuth firebaseAuth;
     TextView verifyMsg;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_dashboard);
 
         mainLogoutBtn = findViewById(R.id.mainLogOutBtn);
         firebaseAuth = FirebaseAuth.getInstance();
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 firebaseAuth.signOut();
-                startActivity(new Intent(getApplicationContext(), Login.class));
+                startActivity(new Intent(getApplicationContext(), PasswordLogin.class));
                 finish();
             }
         });
@@ -102,13 +102,13 @@ public class MainActivity extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                Toast.makeText(MainActivity.this, "Email Updated", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(Dashboard.this, "Email Updated", Toast.LENGTH_LONG).show();
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(MainActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                                Toast.makeText(Dashboard.this, e.getMessage(), Toast.LENGTH_LONG).show();
                                             }
                                         });
                             }

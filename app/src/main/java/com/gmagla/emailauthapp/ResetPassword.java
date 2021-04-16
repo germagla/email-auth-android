@@ -12,9 +12,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.EmailAuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ResetPassword extends AppCompatActivity {
@@ -25,7 +23,7 @@ public class ResetPassword extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reset_password2);
+        setContentView(R.layout.activity_reset_password);
 
         newPassword = findViewById(R.id.newPassword);
         newPasswordConf = findViewById(R.id.newPasswordConf);
@@ -48,7 +46,7 @@ public class ResetPassword extends AppCompatActivity {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 Toast.makeText(getApplicationContext(), "Password Updated", Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(getApplicationContext(), Login.class));
+                                startActivity(new Intent(getApplicationContext(), PasswordLogin.class));
                                 finish();
                             }
                         }).addOnFailureListener(new OnFailureListener() {

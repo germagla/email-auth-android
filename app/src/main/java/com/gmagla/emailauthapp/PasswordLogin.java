@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Login extends AppCompatActivity {
+public class PasswordLogin extends AppCompatActivity {
     Button createAccountBtn, loginBtn, resetPassBtn;
     EditText loginUsername, loginPassword;
     FirebaseAuth firebaseAuth;
@@ -28,7 +28,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_password_login);
 
         createAccountBtn = findViewById(R.id.loginCreateAccountButton);
         loginUsername = findViewById(R.id.loginEmail);
@@ -56,13 +56,13 @@ public class Login extends AppCompatActivity {
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
                                             public void onSuccess(Void aVoid) {
-                                                Toast.makeText(Login.this, "Reset Email Sent", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(PasswordLogin.this, "Reset Email Sent", Toast.LENGTH_LONG).show();
                                             }
                                         })
                                         .addOnFailureListener(new OnFailureListener() {
                                             @Override
                                             public void onFailure(@NonNull Exception e) {
-                                                Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                                                Toast.makeText(PasswordLogin.this, e.getMessage(), Toast.LENGTH_LONG).show();
                                             }
                                         });
                             }
@@ -77,7 +77,7 @@ public class Login extends AppCompatActivity {
                 firebaseAuth.signInWithEmailAndPassword(loginUsername.getText().toString(), loginPassword.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), Dashboard.class));
                         finish();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
@@ -117,7 +117,7 @@ public class Login extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), Dashboard.class));
             finish();
         }
     }
